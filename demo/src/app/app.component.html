@@ -1,0 +1,178 @@
+<header>
+  <div class="container">
+    <a data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
+      <i class="material-icons">menu</i>
+    </a>
+  </div>
+
+  <ul id="nav-mobile" class="side-nav fixed">
+    <li class="logo">
+      <h3>
+        <a id="logo-container" routerLink="" class="brand-logo">
+          <div class="logo-img">
+            <img src="assets/angular.png" alt="Angular" />
+            <span class="plus">+</span>
+            <img src="assets/datatables.png" alt="DataTables" />
+          </div>
+        </a>
+      </h3>
+    </li>
+    <li>
+      <a class="dt-version-button btn-flat" data-activates='dropdown1'>
+        DT version: '{{dtVersion}}'
+        <svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+      </a>
+
+      <ul id="dropdown1" [(ngModel)]="dtVersion" ngDefaultControl class='dropdown-content'>
+        <li [class.active]="dtVersion == 'v2'" (click)="onDTVersionChanged('v2')" value="v2" style="padding:0 32px">v2.x</li>
+        <li [class.active]="dtVersion == 'v1'" (click)="onDTVersionChanged('v1')" value="v1" style="padding:0 32px">v1.x</li>
+      </ul>
+    </li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Getting Started</a></li>
+    <li class="bold">
+      <a routerLink="/getting-started" class="waves-effect waves-blue">Installation</a>
+    </li>
+    <li class="bold">
+      <a routerLink="/basic/with-ajax" class="waves-effect waves-blue">Quickstart</a>
+    </li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Usage</a></li>
+
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-blue">Basic Examples</a>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/basic/zero-config">Zero configuration</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/basic/with-options">With options</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/basic/with-ajax-callback">AJAX using DT callback</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/basic/new-server-side">Server side</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/advanced/row-click-event">Row click event</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/advanced/multiple-tables">Multiple tables</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/advanced/dt-instance">Fetching DataTable instances</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/advanced/load-dt-options-with-promise">Load DT options with promise</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-blue">Angular</a>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/advanced/using-pipe">Using Pipes</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/advanced/using-template-ref">Using TemplateRef</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/advanced/rerender">Re-render table</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/advanced/router-link">Router link</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-blue">Filtering</a>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/advanced/custom-range-search">Custom filtering - Range search</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/advanced/individual-column-filtering">Individual column filtering</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-blue">DT extensions</a>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/extensions/buttons">Buttons extension</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/extensions/colreorder">ColReorder extension</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/extensions/responsive">Responsive extension</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/extensions/select">Select extension</a>
+              </li>
+              <li>
+                <a class="waves-effect waves-blue" routerLink="/extensions/fixed-columns">Fixed Columns extension</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Support</a></li>
+
+        <li class="bold">
+          <a routerLink="/faq" class="waves-effect waves-blue">FAQ</a>
+        </li>
+        <li class="bold">
+          <a routerLink="/more-help" class="waves-effect waves-blue">Resources</a>
+        </li>
+        <li>
+          <div class="divider"></div>
+        </li>
+        <!-- Hide deprecated section completely in DT v2 -->
+        <ng-container *ngIf="dtVersion == 'v1'">
+
+        <li><a class="subheader">Deprecated <span class="new badge red" data-badge-caption="">NOT SUPPORTED</span></a>
+        </li>
+        <li class="bold">
+          <a class="waves-effect waves-blue" routerLink="/basic/angular-way">Angular way</a>
+        </li>
+        <li class="bold">
+          <a class="waves-effect waves-blue" routerLink="/basic/server-side-angular-way">Server side the Angular way</a>
+        </li>
+      </ng-container>
+    </ul>
+    </li>
+  </ul>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <div class="container">
+      <p>
+        <span class="white-text text-darken-2"> Designed and built with ❤️ by
+          <a class="grey-text text-darken-4" href="https://github.com/GlobalArtInc"><u>GlobalArtInc</u></a>
+        </span>
+      </p>
+    </div>
+  </div>
+</footer>

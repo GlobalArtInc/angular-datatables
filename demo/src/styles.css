@@ -1,0 +1,199 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+header, main, footer {
+  padding-left: 300px;
+}
+
+.waves-effect.waves-blue .waves-ripple {
+  background-color: #90caf9;
+}
+
+@media only screen and (max-width: 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+.top-banner {
+  min-height: 120px !important;
+}
+
+.banner {
+  background-color: #2196f3;
+}
+
+.banner .header {
+  color: #FFF;
+}
+
+.banner h1 {
+  margin-top: 16px;
+}
+
+.banner .row {
+  margin-bottom: 0;
+}
+
+.header {
+  color: #2196f3;
+}
+
+.caption {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.container {
+  width: 90%;
+}
+
+/* Footer */
+footer.page-footer {
+  padding-top: 0;
+  margin-top: 5px;
+  background-color: #2196f3;
+}
+
+.footer-copyright {
+  font-weight: 400 !important;
+}
+
+/* Tabs */
+
+.tabs {
+  overflow: hidden;
+}
+
+.tabs .tab a {
+  color: white;
+}
+
+.tabs .tab a:hover {
+  color: rgba(144, 202, 249, 0.6);
+}
+
+.tabs .tab a.active {
+  color: #90caf9;
+}
+
+.tabs .indicator {
+  background-color: #2196f3;
+}
+
+.anchor-links {
+  text-align: center;
+}
+
+.showcase-tabs {
+  margin-bottom: 20px;
+}
+
+/* blockquote */
+
+blockquote {
+  background-color: rgba(144, 202, 249, 0.6);
+  padding: 5px;
+  color: #666;
+  margin: 20px 0;
+  border-left: solid 5px #2196f3;
+}
+
+/* Revert DataTables styles, as Materialize override some default styles... */
+
+.dataTables_wrapper label {
+  font-size: 1rem;
+  color: #000;
+}
+
+.dataTables_wrapper select {
+  display: inline;
+  border: 1px solid #000;
+  border-radius: 0;
+  padding: 0;
+  width: inherit;
+  height: inherit;
+}
+
+.dataTables_wrapper .dataTables_filter input[type="search"] {
+  border: 1px solid #000;
+  height: inherit;
+  width: inherit;
+  font-size: inherit;
+  margin: 0 0 0 0.5em;
+  display: inline-block;
+  background-color: #FFF;
+  visibility: visible !important;
+}
+
+.dataTables_empty {
+    display: none;
+}
+
+/** copy to clipboard button css */
+
+div.code-toolbar > .toolbar {
+  opacity: unset !important;
+  top: 0.5em !important;
+  right: 0.5em !important;
+}
+
+div.code-toolbar > .toolbar button {
+  color: black !important;
+  background-color: white !important;
+  padding: 4px !important;
+  font-size: 15px !important;
+}
+
+/* markdown library stuff */
+
+markdown h5:not(markdown.faqMarkdown) {
+  color: #2196f3;
+}
+
+
+/** Fixed columns css
+
+These classes are injected by fixed columns extensions
+and can be tweaked here to match the colors of headers and body
+to hide the scrolling element behind the fixed header.
+
+*/
+
+
+table.dataTable thead tr > .dtfc-fixed-left,
+table.dataTable thead tr > .dtfc-fixed-right,
+table.dataTable tfoot tr > .dtfc-fixed-left,
+table.dataTable tfoot tr > .dtfc-fixed-right {
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  background-color: white;
+}
+
+table.dataTable tbody tr > .dtfc-fixed-left,
+table.dataTable tbody tr > .dtfc-fixed-right {
+  z-index: 1;
+  background-color: white;
+}
+
+div.dtfc-left-top-blocker,
+div.dtfc-right-top-blocker {
+  background-color: white;
+}
+
+/* Dt v2 CSS messed up some stuff */
+.dt-search input {
+  width: 200px !important;
+  height: 20px !important;
+}
+
+select.dt-input {
+  display: inline-block !important;
+  width: 60px;
+  height: 40px;
+}
